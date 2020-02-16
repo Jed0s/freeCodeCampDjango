@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Home Page</h1>
+<p> Hi, {{ request.user }}, it's a home page</p>
+
+<p>You can replace your text here: {{ text }}</p>
+<p>And your question here: {{ question }}</p>
+<p>And your answer here: {{ answer }}</p>
+<p>And your phrase here: {{ phrase|title }}</p>
+
+<ul>
+    {% for element in list_of_titles %}
+        {% if element == 22 %}
+            <li>{{ forloop.counter }} - {{ element|add:78 }}</li>
+        {% else %}
+            <li>{{ forloop.counter }} - {{ element }}</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+
+
+{% endblock %}
